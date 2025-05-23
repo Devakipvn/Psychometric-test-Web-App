@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .user-info {
+            display: flex;
+            gap: 10px;
+        }
+        .logout-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .recommendation {
+            margin-top: 20px;
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="index.html"><button>Home</button></a>
+        <a href="know-more.html"><button>About</button></a>
+        <a href="logical.html"><button>Logical</button></a>
+        <a href="analytical.html"><button>Analytical</button></a>
+        <a href="creative.html"><button>Creative</button></a>
+
+        <div class="nav-right">
+            <div class="user-menu">
+                <div class="user-icon" onclick="toggleDropdown()">
+                    👤
+                    <div id="displayedName" class="username">Guest</div>
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <label>Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label>Male<input type="radio" name="gender" value="male"></label>
+                        <label>Female<input type="radio" name="gender" value="female"></label>
+                        <label>Other<input type="radio" name="gender" value="other"></label>
+                    </div>
+
+                    <label>Mobile Number:</label>
+                    <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+
+                    <div class="button-group">
+                        <button id="saveBtn" class="save-btn">Save</button>
+                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <h2>Analytical Questions</h2>
+    <p class="explanation">Analytical questions test the ability to analyze, interpret, and solve problems using patterns, relationships, logical reasoning, and critical thinking. They involve breaking down complex problems into simpler parts, identifying patterns, and making connections to arrive at a well-reasoned conclusion.</p>
+
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <!-- Question 1 -->
+                <h3>1. If you’re spending more money than you earn, what should you do?</h3>
+                <label><input type="radio" name="q1" value="a"> a) Save more and cut unnecessary expenses</label><br>
+                <label><input type="radio" name="q1" value="b"> b) Increase your spending to get more things</label><br>
+                <label><input type="radio" name="q1" value="c"> c) Ignore it and hope things improve</label><br>
+                <label><input type="radio" name="q1" value="d"> d) Borrow money from others</label><br>
+
+            </div>
+            
+            <div class="question">
+                <!-- Question 2 -->
+                <h3>2. What would happen if you keep adding more workers to a project but don't improve planning?</h3>
+                <label><input type="radio" name="q2" value="a"> a) The project could become more chaotic</label><br>
+                <label><input type="radio" name="q2" value="b"> b) The project will get done faster</label><br>
+                <label><input type="radio" name="q2" value="c"> c) The project will cost less</label><br>
+                <label><input type="radio" name="q2" value="d"> d) The project will be completed with better quality</label><br><br>
+            </div>
+
+            <div class="question">
+                <h3>3. If your company is facing a decrease in customer retention, what could be the cause?</h3>
+                <label><input type="radio" name="q3" value="a"> a) Poor customer service, lack of engagement, or better competitor offers</label><br>
+                <label><input type="radio" name="q3" value="b"> b) Increased marketing efforts, new product launches, and seasonality</label><br>
+                <label><input type="radio" name="q3" value="c"> c) High-quality products, consistent branding, and loyal customers</label><br>
+                <label><input type="radio" name="q3" value="d"> d) Inconsistent product quality, lack of promotions, or outdated technology</label><br>
+            </div>
+
+            <div class="question">
+                <h3>4. Which action is most likely to increase productivity in a workplace?</h3>
+                <label><input type="radio" name="q4" value="a"> a) Encouraging multitasking and offering more breaks</label><br>
+                <label><input type="radio" name="q4" value="b"> b) Reducing work hours and increasing job responsibilities</label><br>
+                <label><input type="radio" name="q4" value="c"> c) Implementing clear goals, time management, and task prioritization</label><br>
+                <label><input type="radio" name="q4" value="d"> d) Offering rewards for completing tasks without focus on quality</label><br>
+            </div>
+            
+            <div class="question">
+                <h3>5. If a train travels 60 miles in 1 hour, how far will it travel in 3 hours at the same speed?</h3>
+                <label><input type="radio" name="q5" value="a"> a) 120 miles</label><br>
+                <label><input type="radio" name="q5" value="b"> b) 180 miles</label><br>
+                <label><input type="radio" name="q5" value="c"> c) 60 miles</label><br>
+                <label><input type="radio" name="q5" value="d"> d) 240 miles</label><br>
+            </div>
+
+            <div class="question">
+                <h3>6. If a car’s fuel efficiency is 25 miles per gallon, how many gallons are needed to travel 100 miles?</h3>
+                <label><input type="radio" name="q6" value="a"> a) 2 gallons</label><br>
+                <label><input type="radio" name="q6" value="b"> b) 4 gallons</label><br>
+                <label><input type="radio" name="q6" value="c"> c) 5 gallons</label><br>
+                <label><input type="radio" name="q6" value="d"> d) 10 gallons</label><br>
+            </div>
+
+            <div class="question">
+                <h3>7. If a product’s price increases by 20% and the original price is $50, what is the new price?</h3>
+                <label><input type="radio" name="q9" value="a"> a) $55</label><br>
+                <label><input type="radio" name="q9" value="b"> b) $60</label><br>
+                <label><input type="radio" name="q9" value="c"> c) $65</label><br>
+                <label><input type="radio" name="q9" value="d"> d) $70</label><br>
+            </div>
+
+            <div class="question">
+                <h3>8. A company’s profit is revenue minus expenses. If revenue is $5000 and expenses are $3000, what is the profit?</h3>
+                <label><input type="radio" name="q8" value="a"> a) $2000</label><br>
+                <label><input type="radio" name="q8" value="b"> b) $1000</label><br>
+                <label><input type="radio" name="q8" value="c"> c) $3000</label><br>
+                <label><input type="radio" name="q8" value="d"> d) $5000</label><br>
+            </div>
+
+            <div class="question">
+                <h3>9.What factor has the greatest impact on a company's profits?</h3>
+                <label><input type="radio" name="q9" value="a"> a) Sales, costs, or customer retention</label><br>
+                <label><input type="radio" name="q9" value="b"> b) Product innovation, employee performance, or customer feedback</label><br>
+                <label><input type="radio" name="q9" value="c"> c) Marketing campaigns, competitor actions, or seasonal trends</label><br>
+                <label><input type="radio" name="q9" value="d"> d) Expansion, supply chain efficiency, or production costs</label><br>
+            </div>
+
+            <div class="question">
+                <h3>10.If a team is missing its deadlines, what could be the cause?</h3>
+                <label><input type="radio" name="q10" value="a"> a) Poor time management or lack of resources</label><br>
+                <label><input type="radio" name="q10" value="b"> b) Everyone is too busy with other projects</label><br>
+                <label><input type="radio" name="q10" value="c"> c) The project is too easy and doesn’t need effort</label><br>
+                <label><input type="radio" name="q10" value="d"> d) The team has too much time to finish the tasks</label><br>
+            </div>
+            <div class="question">
+                <h3>11. If two people can complete a task in 4 hours together, how long would it take one person working alone if both have the same efficiency?</h3>
+                <label><input type="radio" name="q11" value="a"> a) 6 hours</label><br>
+                <label><input type="radio" name="q11" value="b"> b) 8 hours</label><br>
+                <label><input type="radio" name="q10" value="c"> c) 10 hours</label><br>
+                <label><input type="radio" name="q10" value="d"> d) 12 hours</label><br>
+            </div>
+
+            <div class="question">
+                
+                <h3>12. If two people can complete a task in 4 hours together, how long would it take one person working alone if both have the same efficiency?</h3>
+                <label><input type="radio" name="q12" value="a"> a) 6 hours</label><br>
+                <label><input type="radio" name="q12" value="b"> b) 2 hours</label><br>
+                <label><input type="radio" name="q12" value="c"> c) 4 hours</label><br>
+                <label><input type="radio" name="q12" value="d"> d) 8 hours</label><br>
+            </div>
+            <div class="question"> 
+                <h3>13. Which word does not belong in the group?</h3>
+                <label><input type="radio" name="q13" value="a"> a) Triangle</label><br>
+                <label><input type="radio" name="q13" value="b"> b) Rectangle</label><br>
+                <label><input type="radio" name="q13" value="c"> c) Circle</label><br>
+                <label><input type="radio" name="q13" value="d"> d) Pentagon</label><br>
+            </div>
+
+            <div class="question"> 
+                <h3>14. Statements:</h3>
+                <h5>All pens are books.</h5>
+                <h5>All books are blue.</h5>
+                <h3>Conclusion:</h3>
+                <h5>All pens are blue.</h5>
+                <h5>Some books are pens.</h5>
+                <h3>Which of the conclusions follow?</h3>
+                <label><input type="radio" name="q14" value="a"> a) Only conclusion 1</label><br>
+                <label><input type="radio" name="q14" value="b"> b) Only conclusion 2</label><br>
+                <label><input type="radio" name="q14" value="c"> c) Both 1 and 2</label><br>
+                <label><input type="radio" name="q14" value="d"> d) Neither 1 nor 2</label><br>
+            </div>
+
+            <div class="question"> 
+                <h3>15. A man walks 10 meters north, then turns east and walks 5 meters. Finally, he turns south and walks 10 meters. How far is he from his starting point?</h3>
+                <label><input type="radio" name="q15" value="a"> a) 10 meters</label><br>
+                <label><input type="radio" name="q15" value="b"> b) 5 meters</label><br>
+                <label><input type="radio" name="q15" value="c"> c) 15 meters</label><br>
+                <label><input type="radio" name="q15" value="d"> d) 20 meters</label><br>
+            </div>
+
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+    <div class="recommendation" id="recommendation"></div>
+
+    <script>
+        function calculateScore() {
+            // Correct answers for each question
+            const correctAnswers = {
+                q1: "a",
+                q2: "a",
+                q3: "a",
+                q4: "c",
+                q5: "b",
+                q6: "b",
+                q7: "b",
+                q8: "a",
+                q9: "a",
+                q10: "a",
+                q11: "b",
+                q12: "d",
+                q13: "c",
+                q14: "c",
+                q15: "b"
+            };
+
+            let score = 0;
+
+            // Loop through all questions and check answers
+            for (let question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Calculate percentage
+            const totalQuestions = Object.keys(correctAnswers).length;
+            const percentage = (score / totalQuestions) * 100;
+
+            // Display result
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `Your Score: ${score} / ${totalQuestions} (${percentage.toFixed(2)}%)`;
+
+            // Recommendation logic
+            const recommendationDiv = document.getElementById("recommendation");
+            if (percentage > 50) {
+                recommendationDiv.innerHTML = `
+                    <p>Congratulations! Your score is above 50%. Here are some free resources and roadmaps to further improve:</p>
+                    <h3>Free Roadmaps:</h3>
+                    <ul>
+                        <li><a href="https://roadmap.sh/" target="_blank">Roadmap.sh - Developer Roadmaps</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/developer-roadmap/" target="_blank">FreeCodeCamp - Developer Career Path</a></li>
+                    </ul>
+                    <h3>Free Courses:</h3>
+                    <ul>
+                        <li><a href="https://www.coursera.org/" target="_blank">Coursera - Free Courses</a></li>
+                        <li><a href="https://www.edx.org/" target="_blank">edX - Free Courses</a></li>
+                        <li><a href="https://www.udemy.com/" target="_blank">Udemy - Free Courses</a></li>
+                        <li><a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning - Free Courses</a></li>
+                    </ul>
+                `;
+            } else {
+                recommendationDiv.innerHTML = `<p>Keep practicing! You can do better next time.</p>`;
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

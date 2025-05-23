@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .user-info {
+            display: flex;
+            gap: 10px;
+        }
+        .logout-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .recommendation {
+            margin-top: 20px;
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="index.html"><button>Home</button></a>
+        <a href="know-more.html"><button>About</button></a>
+        <a href="logical.html"><button>Logical</button></a>
+        <a href="analytical.html"><button>Analytical</button></a>
+        <a href="creative.html"><button>Creative</button></a>
+      
+        <div class="nav-right">
+            <div class="user-menu">
+                <div class="user-icon" onclick="toggleDropdown()">
+                    👤
+                    <div id="displayedName" class="username">Guest</div>
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <label>Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label>Male<input type="radio" name="gender" value="male"></label>
+                        <label>Female<input type="radio" name="gender" value="female"></label>
+                        <label>Other<input type="radio" name="gender" value="other"></label>
+                    </div>
+
+                    <label>Mobile Number:</label>
+                    <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+
+                    <div class="button-group">
+                        <button id="saveBtn" class="save-btn">Save</button>
+                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                    </div>
+                    <div class="dropdown-menu">
+  <div class="button-group">
+    <button class="save-btn">Save</button>
+    <button class="logout-btn">Logout</button>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <h2>Creative Questions</h2>
+    <p class="explanation">Creative questions are open-ended inquiries that stimulate critical thinking, imagination, and innovative problem-solving. Unlike factual questions, they challenge individuals to think outside the box, explore possibilities, and develop unique solutions, often with multiple correct answers.</p>
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <h3>1. A garden has 80 flowers, and 32 of them are roses. What fraction of the flowers are roses?</h3>
+            <label><input type="radio" name="q1" value="a"> a) 1/2</label><br>
+            <label><input type="radio" name="q1" value="b"> b) 1/4</label><br>
+            <label><input type="radio" name="q1" value="c"> c) 2/5</label><br>
+            <label><input type="radio" name="q1" value="d"> d) 4/5</label><br>
+        </div>
+        
+        <div class="question">
+            <h3>2. You have a book with 200 pages. If you have read 50 pages, what fraction of the book have you read?</h3>
+            <label><input type="radio" name="q2" value="a"> a) 1/4</label><br>
+            <label><input type="radio" name="q2" value="b"> b) 1/2</label><br>
+            <label><input type="radio" name="q2" value="c"> c) 3/4</label><br>
+            <label><input type="radio" name="q2" value="d"> d) 1/5</label><br>
+        </div>
+
+        <div class="question">
+            <h3>3. A class has 30 students, and 18 students passed the test. What fraction of the class passed?</h3>
+            <label><input type="radio" name="q3" value="a"> a) 1/2</label><br>
+            <label><input type="radio" name="q3" value="b"> b) 3/5</label><br>
+            <label><input type="radio" name="q3" value="c"> c) 1/4</label><br>
+            <label><input type="radio" name="q3" value="d"> d) 2/3</label><br>
+        </div>
+
+        <div class="question">
+            <h3>4. What would a book about a day in the life of a pencil look like?</h3>
+            <label><input type="radio" name="q4" value="a"> a) A journey through different papers and books</label><br>
+            <label><input type="radio" name="q4" value="b"> b) A story about writing and erasing</label><br>
+            <label><input type="radio" name="q4" value="c"> c) A deep reflection on its point of view</label><br>
+            <label><input type="radio" name="q4" value="d"> d) A mystery of how it got lost</label><br>
+        </div>
+
+        <div class="question">
+            <h3>5. Imagine you are a word in a dictionary. What would your definition be?</h3>
+            <label><input type="radio" name="q5" value="a"> a) A helping word</label><br>
+            <label><input type="radio" name="q5" value="b"> b) A mysterious word with many meanings</label><br>
+            <label><input type="radio" name="q5" value="c"> c) A word that represents a feeling</label><br>
+            <label><input type="radio" name="q5" value="d"> d) A word with a sound that makes you smile</label><br>
+        </div>
+
+        <div class="question">
+            <h3>6. Imagine you had 100 marbles and you gave away 45. What would be the most effective way to describe the fraction of marbles you have left?</h3>
+            <label><input type="radio" name="q6" value="a"> a) 55/100</label><br>
+            <label><input type="radio" name="q6" value="b"> b) 45/100</label><br>
+            <label><input type="radio" name="q6" value="c"> c) 9/20</label><br>
+            <label><input type="radio" name="q6" value="d"> d) 9/25</label><br>
+        </div>
+
+        <div class="question">
+            <h3>7. If you could choose one sentence to describe the importance of kindness in the world, which one would it be?</h3>
+            <label><input type="radio" name="q7" value="a"> a) “Kindness is a language the deaf can hear and the blind can see.”</label><br>
+            <label><input type="radio" name="q7" value="b"> b) “Kindness is the key to happiness.”</label><br>
+            <label><input type="radio" name="q7" value="c"> c) “Kindness costs nothing but means everything.”</label><br>
+            <label><input type="radio" name="q7" value="d"> d) “A little kindness can change the world.”</label><br>
+        </div>
+
+        <div class="question">
+            <h3>8. You want to organize books in a library. If you have 150 books and want to divide them into 10 shelves, how many books would be on each shelf?</h3>
+            <label><input type="radio" name="q8" value="a"> a) 25</label><br>
+            <label><input type="radio" name="q8" value="b"> b) 10</label><br>
+            <label><input type="radio" name="q8" value="c"> c) 20</label><br>
+            <label><input type="radio" name="q8" value="d"> d) 15</label><br>
+        </div>
+
+        <div class="question">
+            <h3>9. Imagine you're a famous inventor. What invention would you create to solve a current problem?</h3>
+            <label><input type="radio" name="q9" value="a"> a) A device that purifies air instantly.</label><br>
+            <label><input type="radio" name="q9" value="b"> b) A gadget that translates thoughts into text.</label><br>
+            <label><input type="radio" name="q9" value="c"> c) A machine that turns plastic waste into fuel.</label><br>
+            <label><input type="radio" name="q9" value="d"> d) A system that provides clean water anywhere instantly.</label><br>
+        </div>
+
+        <div class="question">
+            <h3>10. If you could make one change to the education system, what would it be?</h3>
+            <label><input type="radio" name="q10" value="a"> a) More focus on hands-on learning and real-world experiences.</label><br>
+            <label><input type="radio" name="q10" value="b"> b) Integrating creativity and arts into every subject.</label><br>
+            <label><input type="radio" name="q10" value="c"> c) Fostering more collaboration and teamwork in classrooms.</label><br>
+            <label><input type="radio" name="q10" value="d"> d) Less emphasis on exams and more on projects and research</label><br>
+        </div>
+
+        <div class="question">
+            <h3>11. If you could choose one word to represent the feeling of warmth and love during the holiday season, what would it be?</h3>
+            <label><input type="radio" name="q11" value="a"> a) Joy</label><br>
+            <label><input type="radio" name="q11" value="b"> b) Cheer</label><br>
+            <label><input type="radio" name="q11" value="c"> c) Peace</label><br>
+            <label><input type="radio" name="q11" value="d"> d) Home</label><br>
+        </div>
+
+        <div class="question">
+            <h3>12. If you were given a choice to calculate your age in days instead of years, how would you do it?</h3>
+            <label><input type="radio" name="q12" value="a"> a) Multiply your age by 365</label><br>
+            <label><input type="radio" name="q12" value="b"> b) Multiply your age by 365.25 to account for leap years</label><br>
+            <label><input type="radio" name="q12" value="c"> c) Add the number of months in a year to your age</label><br>
+            <label><input type="radio" name="q12" value="d"> d) Subtract the number of days left in the current year from your age</label><br>
+        </div>
+
+        <div class="question">
+            <h3>13. How can you explain the concept of perseverance using a metaphor?</h3>
+            <label><input type="radio" name="q13" value="a"> a) "Perseverance is a plant that grows with water and care."</label><br>
+            <label><input type="radio" name="q13" value="b"> b) "Perseverance is like climbing a mountain one step at a time."</label><br>
+            <label><input type="radio" name="q13" value="c"> c) "Perseverance is like a storm that clears up eventually."</label><br>
+            <label><input type="radio" name="q13" value="d"> d) "Perseverance is a fire that cannot be extinguished."</label><br>
+        </div>
+
+        <div class="question">
+            <h3>14. A train leaves a station at 9:00 AM, traveling at 60 km/h. Another train leaves the same station at 11:00 AM at 90 km/h. At what time will the second train catch up with the first?</h3>
+            <label><input type="radio" name="q14" value="a"> a) 12:00 PM</label><br>
+            <label><input type="radio" name="q14" value="b"> b) 1:00 PM</label><br>
+            <label><input type="radio" name="q14" value="c"> c) 2:00 PM</label><br>
+            <label><input type="radio" name="q14" value="d"> d) 3:00 PM</label><br>
+        </div>
+
+        <div class="question">
+            <h3>15. If you could add a new holiday to the calendar, what would it celebrate?</h3>
+            <label><input type="radio" name="q15" value="a"> a) Global Day of Giving, where people help others.</label><br>
+            <label><input type="radio" name="q15" value="b"> b) Creativity Day, encouraging art and innovation.</label><br>
+            <label><input type="radio" name="q15" value="c"> c) Nature's Day, celebrating the environment.</label><br>
+            <label><input type="radio" name="q15" value="d"> d) Memory Day, where we reminisce about past experiences.</label><br>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+    <div class="recommendation" id="recommendation"></div>
+
+    <script>
+        function calculateScore() {
+            // Correct answers for each question
+            const correctAnswers = {
+                q1: "c",
+                q2: "a",
+                q3: "b",
+                q4: "a",
+                q5: "b",
+                q6: "a",
+                q7: "c",
+                q8: "d",
+                q9: "c",
+                q10: "a",
+                q11: "d",
+                q12: "b",
+                q13: "b",
+                q14: "b",
+                q15: "a"
+            };
+
+            let score = 0;
+
+            // Loop through all questions and check answers
+            for (let question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Calculate percentage
+            const totalQuestions = Object.keys(correctAnswers).length;
+            const percentage = (score / totalQuestions) * 100;
+
+            // Display result
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `Your Score: ${score} / ${totalQuestions} (${percentage.toFixed(2)}%)`;
+
+            // Recommendation logic
+            const recommendationDiv = document.getElementById("recommendation");
+            if (percentage > 50) {
+                recommendationDiv.innerHTML = `
+                    <p>Congratulations! Your score is above 50%. Here are some free resources and roadmaps to further improve:</p>
+                    <h3>Free Roadmaps:</h3>
+                    <ul>
+                        <li><a href="https://roadmap.sh/" target="_blank">Roadmap.sh - Developer Roadmaps</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/developer-roadmap/" target="_blank">FreeCodeCamp - Developer Career Path</a></li>
+                    </ul>
+                    <h3>Free Courses:</h3>
+                    <ul>
+                        <li><a href="https://www.coursera.org/" target="_blank">Coursera - Free Courses</a></li>
+                        <li><a href="https://www.edx.org/" target="_blank">edX - Free Courses</a></li>
+                        <li><a href="https://www.udemy.com/" target="_blank">Udemy - Free Courses</a></li>
+                        <li><a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning - Free Courses</a></li>
+                    </ul>
+                `;
+            } else {
+                recommendationDiv.innerHTML = `<p>Keep practicing! You can do better next time.</p>`;
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

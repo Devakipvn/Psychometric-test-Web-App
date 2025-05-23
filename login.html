@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychometric Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+      display: none;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1, h2, p {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:hover {
+      border-color: #007bff;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.7);
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+
+    button {
+      padding: 10px 16px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+   
+
+    .logout-btn {
+      background-color: #ff4d4d;
+    }
+
+    .logout-btn:hover {
+      background-color: #e60000;
+    }
+
+    .link-container {
+      margin-top: 15px;
+    }
+
+    .link-container a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .link-container a:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: rgb(249, 126, 126);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .suggestion-message {
+      color: orange;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between; /* Keeps the buttons spaced */
+      gap: 10px; /* Adds space between buttons */
+    }
+
+    .btn {
+      flex: 1; /* Makes both buttons take equal width */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .logout-btn {
+      background-color: #ff4d4d;
+      color: white;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      size: 40%;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Login Section -->
+  <div class="login-container" id="loginContainer">
+    <h1><i>Hello User!</i></h1>
+    <div id="suggestionMessage" class="suggestion-message" style="display: none;">
+      Your email is not registered. Please create an account</a>
+    </div> <!-- Suggestion message for new users -->
+    <div id="errorMessage" class="error-message"></div> <!-- Error message container -->
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <div id="emailError" class="error-message"></div> <!-- Invalid email error -->
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <span class="eye-icon" id="togglePassword">👁️</span>
+      </div>
+      <div id="passwordError" class="error-message"></div> <!-- Incorrect credentials message -->
+      <button type="submit">Login</button>
+    </form>
+    <div class="link-container">
+      <p>New user? <a href="#" id="createAccountLink">Create an account</a></p>
+      <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p> <!-- Forgot password link -->
+    </div>
+  </div>
+
+  <!-- Forgot Password Section -->
+  <div class="container" id="forgotPasswordContainer" style="display: none;">
+    <h1><i>Forgot Password?</i></h1>
+    <form id="forgotPasswordForm">
+      <div class="form-group">
+        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+        <div id="resetEmailError" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <input type="password" id="newPassword" placeholder="Create new password" required>
+        <span class="eye-icon" id="toggleNewPassword">👁️</span>
+        <div id="newPasswordError" class="error-message"></div>
+      </div>
+      
+      <div class="form-group"> 
+        <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+        <span class="eye-icon" id="toggleConfirmPassword">👁️</span>
+        <div id="confirmPasswordError" class="error-message"></div>
+      </div>
+      <div class="button-group">
+        <button class="logout-btn" id="backToLoginBtn">Back to Login</button>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+  </form>
+  </div>
+
+  
+  <!-- Logged-In Section -->
+  <div class="container" id="loggedInContainer">
+    <h3>You Successfully logged in</h3><br>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </div>
+
+  <!-- Signup Section -->
+  <div class="container" id="signupContainer" style="display: none;">
+    <h1><i>Welcome User!</i></h1>
+    <p>Let's drive into the world of <b>PSYCHOMETRIC TEST</b>. It reveals your knowledge.</p>
+    <p>Are you ready to check your Knowledge!!</p>
+    <form id="signupForm">
+      <div class="form-group">
+        <input type="text" id="signupName" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        <div id="signupEmailError" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <input type="password" id="signupPassword" placeholder="Create a password" required>
+        <span class="eye-icon" id="toggleSignupPassword">👁️</span>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="link-container">
+      <p>Already have an account? <a href="#" id="goToLoginLink">Go to login</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+    const loginForm = document.getElementById('loginForm');
+    const loginContainer = document.getElementById('loginContainer');
+    const loggedInContainer = document.getElementById('loggedInContainer');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const createAccountLink = document.getElementById('createAccountLink');
+    const signupContainer = document.getElementById('signupContainer');
+    const signupForm = document.getElementById('signupForm');
+    const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+    const signupPasswordField = document.getElementById('signupPassword');
+    const goToLoginLink = document.getElementById('goToLoginLink');
+    const suggestionMessageContainer = document.getElementById('suggestionMessage');
+    const errorMessageContainer = document.getElementById('errorMessage');
+    const emailErrorContainer = document.getElementById('emailError');
+    const passwordErrorContainer = document.getElementById('passwordError');
+    const signupEmailErrorContainer = document.getElementById('signupEmailError');
+    const emailField = document.getElementById('email');
+    const signupEmailField = document.getElementById('signupEmail');
+    const resetEmailField = document.getElementById('resetEmail');
+    const newPasswordField = document.getElementById('newPassword');
+    const confirmPasswordField = document.getElementById('confirmPassword');
+    const backToLoginBtn = document.getElementById('backToLoginBtn');
+    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+    const forgotPasswordContainer = document.getElementById('forgotPasswordContainer');
+    const resetEmailError = document.getElementById('resetEmailError');
+    const newPasswordError = document.getElementById('newPasswordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    
+    let storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Toggle password visibility for login
+    togglePassword.addEventListener('click', () => {
+      const type = passwordField.type === 'password' ? 'text' : 'password';
+      passwordField.type = type;
+      togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
+    });
+
+    // Toggle password visibility for signup
+    toggleSignupPassword.addEventListener('click', () => {
+      const type = signupPasswordField.type === 'password' ? 'text' : 'password';
+      signupPasswordField.type = type;
+      toggleSignupPassword.textContent = type === 'password' ? '👁️' : '🙈';
+    });
+
+    loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const email = emailField.value.trim();
+  const password = passwordField.value.trim();
+
+  // Clear previous error messages
+  emailErrorContainer.style.display = 'none';
+  suggestionMessageContainer.style.display = 'none';
+  errorMessageContainer.textContent = '';
+
+  const user = storedUsers.find(user => user.email === email);
+
+  if (!user) {
+    // If email is not registered
+    emailErrorContainer.style.display = 'block';
+    emailErrorContainer.textContent = 'Your email is not registered. Please create an account.';
+  } else if (user.password !== password) {
+    // If password is incorrect
+    errorMessageContainer.textContent = 'Incorrect password.';
+  } else {
+    // Successful login
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
+    alert('Login Successfully')
+    loginContainer.style.display = 'none';
+    loggedInContainer.style.display = 'block';
+    emailField.value = ''; // Clear email input
+    passwordField.value = ''; // Clear password input
+    window.location.href='know-more.html';
+  }
+});
+
+    // Logout
+    logoutBtn.addEventListener('click', () => {
+      loginContainer.style.display = 'block';
+      loggedInContainer.style.display = 'none';
+    });
+
+    // Go to signup page from login page
+    createAccountLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginContainer.style.display = 'none';
+      signupContainer.style.display = 'block';
+      suggestionMessageContainer.style.display = 'none'; // Hide suggestion message
+    });
+
+    // Go to login page from signup page
+    goToLoginLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      signupContainer.style.display = 'none';
+      loginContainer.style.display = 'block';
+    });
+
+    // Signup form submission
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value.trim();
+      const email = signupEmailField.value.trim();
+      const password = signupPasswordField.value;
+
+      // Clear the error messages
+      signupEmailErrorContainer.textContent = '';
+
+      // Check if email already exists
+      const emailExists = storedUsers.some(user => user.email === email);
+      if (emailExists) {
+        signupEmailErrorContainer.textContent = 'Email is already registered.';
+        return;
+      }
+
+      // Add user to localStorage
+      const newUser = { name, email, password };
+      storedUsers.push(newUser);
+      localStorage.setItem('users', JSON.stringify(storedUsers));
+      alert('Signup successful! Please log in.');
+
+      // Redirect to login page
+      signupContainer.style.display = 'none';
+      loginContainer.style.display = 'block';
+      signupEmailField.value = ''; // Clear email input after signup
+      signupPasswordField.value = ''; // Clear password input after signup
+      document.getElementById('signupName').value = ''; // Clear name input
+    });
+
+    // Forgot Password functionality
+    forgotPasswordLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginContainer.style.display = 'none';
+      forgotPasswordContainer.style.display = 'block';
+    });
+
+    // Back to login page from forgot password
+    backToLoginBtn.addEventListener('click', () => {
+      forgotPasswordContainer.style.display = 'none';
+      loginContainer.style.display = 'block';
+    });
+    // Toggle visibility for new password
+    document.getElementById("toggleNewPassword").addEventListener("click", function () {
+      const newPasswordInput = document.getElementById("newPassword");
+      const newPasswordType = newPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+      newPasswordInput.setAttribute("type", newPasswordType);
+      this.textContent = newPasswordType === "password" ? "👁️" : "👁️‍🗨️"; // Change icon
+    });
+
+    // Toggle visibility for confirm password
+    document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+      const confirmPasswordType = confirmPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+      confirmPasswordInput.setAttribute("type", confirmPasswordType);
+      this.textContent = confirmPasswordType === "password" ? "👁️" : "👁️‍🗨️"; // Change icon
+    });
+    
+
+    // Forgot Password form submission
+    forgotPasswordForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const resetEmail = resetEmailField.value.trim();
+      const newPassword = newPasswordField.value;
+      const confirmPassword = confirmPasswordField.value;
+
+      resetEmailError.textContent = '';
+      newPasswordError.textContent = '';
+      confirmPasswordError.textContent = '';
+
+      const user = storedUsers.find(u => u.email === resetEmail);
+      if (!user) {
+        resetEmailError.textContent = 'Email not found.';
+        return;
+      }
+
+      // Validate new password
+      const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+      if (!passwordRegex.test(newPassword)) {
+        newPasswordError.textContent = 'Password must be at least 8 characters long, include a number and a special character.';
+        
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        confirmPasswordError.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      // Update password in localStorage
+      user.password = newPassword;
+      localStorage.setItem('users', JSON.stringify(storedUsers));
+      alert('Password reset successful! Please log in.');
+
+      forgotPasswordContainer.style.display = 'none';
+      loginContainer.style.display = 'block';
+      resetEmailField.value = '';
+      newPasswordField.value = '';
+      confirmPasswordField.value = '';
+    });
+  </script>
+</body>
+</html>
+

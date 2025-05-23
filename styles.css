@@ -1,0 +1,535 @@
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: linear-gradient(to right, rgb(95, 93, 93),rgb(85, 18, 18));
+    color: #090909;
+    line-height: 1.5; /* Improve readability */
+    box-sizing: border-box; /* Prevents extra spacing issues */
+    overflow-x: hidden; /* Removes horizontal scrolling */
+}
+
+
+/* Navbar Styling */
+nav {
+    background-color: rgb(96, 95, 95);
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    position: fixed; /* Fix the navbar */
+    top: 0; /* Stay at the top of the screen */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Make sure it's above other elements */
+}
+
+nav button {
+    color: rgb(16, 15, 15);
+    text-decoration: none;
+    margin: 10px;
+    font-size: calc(1rem + 0.2vw);
+    font-weight: bold;
+    background-color: rgb(31, 186, 186);
+    padding: calc(10px + 0.2vw) calc(20px + 0.5vw);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+    flex: 1 1 auto;
+    max-width: 200px;
+    justify-content: flex-start;
+}
+
+/* 🔥 Update this hover effect */
+nav button:hover {
+    background-color: #1b454f !important;  /* Ensures the color applies */
+    color: white; /* Optional: changes text color for better visibility */
+}
+/* User Icon in the Top Right Corner */
+.nav-right {
+    position: absolute;
+    right: 40px; /* Move user icon to the right side */
+    top: 10px;
+    margin-right: 40px; /* Adjust this value as needed */
+}
+
+/* User Icon */
+.user-icon {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Displayed Username */
+.username {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+/* RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #navbar a button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .user-icon {
+    font-size: 1.3rem;
+  }
+
+  .username {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #navbar a button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .user-icon {
+    font-size: 1.1rem;
+  }
+
+  .username {
+    font-size: 0.8rem;
+  }
+
+  .dropdown-menu {
+    right: auto;
+    left: 0;
+    width: 90vw;
+  }
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.dropdown-menu label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    font-size: 14px;
+}
+
+/* Button Styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-btn {
+    background-color: rgb(30, 190, 30);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-menu button.save-btn:hover {
+    background-color: rgb(28, 127, 28) !important;
+}
+
+.dropdown-menu button.logout-btn:hover {
+    background-color: rgb(182, 67, 67) !important;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .dropdown-menu {
+        top: 40px;
+        right: 10px;
+        width: 90vw;
+        padding: 10px;
+    }
+
+    .radio-group label,
+    .save-btn,
+    .logout-btn {
+        flex: 1 1 100%; /* Stack vertically */
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Responsive Adjustments for Navbar Buttons */
+@media screen and (max-width: 768px) {
+    nav button {
+        font-size: calc(0.9rem + 0.2vw); /* Smaller font for medium screens */
+        padding: calc(8px + 0.2vw) calc(15px + 0.5vw); /* Adjust padding */
+        max-width: 150px; /* Compact button width */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        flex-wrap: wrap; /* Allow buttons to wrap into rows */
+        padding: 5px;
+    }
+
+    nav button {
+        font-size: calc(0.8rem + 0.2vw); /* Smaller font for mobile screens */
+        padding: calc(6px + 0.2vw) calc(12px + 0.4vw); /* Adjust padding */
+        max-width: 120px; /* Keep buttons compact */
+    }
+}
+
+/* Background Section (Home Page) */
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(25, 24, 24);
+    padding: 20px; /* Add some padding for spacing */
+    gap: 20px; /* Add space between elements in the background */
+    margin-top: 0px; /* Ensures the section is just below the navbar */
+    position: relative;
+}
+.background h1 {
+    font-size: calc(2em + 0.5vw); /* Font size adjusts with screen width */
+    margin: 0; /* Remove default margins */
+    
+}
+
+.background h2 {
+    font-size: calc(1.5em + 0.4vw); /* Adjust dynamically */
+    margin: 0; /* Remove default margins */
+}
+
+.background p {
+    font-size: calc(1em + 0.2vw); /* Responsive font size */
+    max-width: 600px;
+    margin: 10px auto 20px auto; /* Center and adjust spacing */
+}
+
+/* Responsive Adjustments for Background Section */
+@media screen and (max-width: 768px) {
+    .background h1 {
+        font-size: calc(1.8em + 0.4vw); /* Slightly smaller font */
+    }
+
+    .background h2 {
+        font-size: calc(1.3em + 0.3vw); /* Adjust dynamically */
+    }
+
+    .background p {
+        font-size: calc(0.9em + 0.2vw); /* Adjust font size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .background h1 {
+        font-size: calc(1.5em + 0.3vw); /* Smaller font for mobile */
+    }
+
+    .background h2 {
+        font-size: calc(1.2em + 0.2vw); /* Smaller font for mobile */
+    }
+
+    .background p {
+        font-size: calc(0.8em + 0.2vw); /* Smaller font for mobile */
+        max-width: 90%; /* Ensure it fits smaller screens */
+    }
+}
+
+/* Background Button Styles */
+.background button {
+    padding: calc(10px + 0.2vw) calc(20px + 0.5vw); /* Dynamic padding */
+    font-size: calc(1rem + 0.2vw); /* Font size adjusts with screen width */
+    background-color: #409e44;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.background button:hover {
+    background-color: #1b4f1e;
+}
+
+@media screen and (max-width: 768px) {
+    .background button {
+        font-size: calc(0.9rem + 0.2vw); /* Smaller button text for medium screens */
+        padding: calc(8px + 0.2vw) calc(15px + 0.5vw); /* Adjust padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .background button {
+        font-size: calc(0.8rem + 0.2vw); /* Smaller button text for mobile */
+        padding: calc(6px + 0.2vw) calc(12px + 0.4vw); /* Adjust padding */
+    }
+}
+
+
+
+/* Next Pages Background (Ash color) */
+body:not(.home) {
+    background-color: #f0f0f0;
+}
+
+/* Center Content for other pages */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: rgb(55, 54, 54);
+    color: rgb(248, 246, 246);
+    text-align: center;
+    
+    font-size: 20px;
+    position: fixed; /* Fix the footer */
+    bottom: 0; /* Stay at the bottom of the screen */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Above other elements */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    footer {
+        font-size: 12px;
+        padding: 4px 20px; /* Further reduced padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        font-size: 10px;
+        padding: 3px 15px; /* Even smaller padding for mobile */
+    }  
+}
+
+/* Overlay styling to disable navbar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 10; /* Ensure it appears above the navbar */
+}
+
+/* Navbar and other content styling */
+nav {
+    z-index: 5; /* Navbar stays below the overlay when active */
+    position: relative;
+}
+
+
+
+
+
+
+
+h2 {
+    color: #333;
+}
+
+.question {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#scoreDisplay {
+    text-align: center;
+}
+
+#retryBtn {
+    margin-top: 20px;
+    background-color: #f44336;
+}
+
+
+
+
+
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: auto;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#result .score {
+    font-size: 20px;
+    color: #333;
+}
+
+#result .message {
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+#result .try-again {
+    margin-top: 10px;
+    background-color: #f44336;
+}
+
+#result .roadmap-btn, #result .try-again-btn {
+    margin-top: 20px;
+    background-color: #008CBA;
+}
+
+#roadmap-section {
+    margin-top: 20px;
+    display: none;
+}
+
+#free-resources {
+    margin-top: 20px;
+}
+
+#free-resources a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#free-resources a:hover {
+    text-decoration: underline;
+}
+
+#roadmap-image {
+    display: none;
+    max-width: 100%;
+    height: auto;
+}

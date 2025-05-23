@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Styling the card */
+        .body {
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+
+        /* Styling the overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            display: none;
+            z-index: 1;
+            
+        }
+
+        /* Centering the modal */
+        .quiz-options {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            z-index: 2; /* Ensure it appears above the overlay */
+            display: none;
+            border-radius: 10px;
+        }
+
+        /* Disable navbar buttons */
+        .navbar-disabled a button {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="index.html"><button>Home</button></a>
+        <a href="know-more.html"><button>About</button></a>
+        <a href="logical.html"><button>Logical</button></a>
+        <a href="analytical.html"><button>Analytical</button></a>
+        <a href="creative.html"><button>Creative</button></a>
+      
+        <div class="nav-right">
+            <div class="user-menu">
+                <div class="user-icon" onclick="toggleDropdown()">
+                    👤
+                    <div id="displayedName" class="username">Guest</div>
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <label>Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label>Male<input type="radio" name="gender" value="male"></label>
+                        <label>Female<input type="radio" name="gender" value="female"></label>
+                        <label>Other<input type="radio" name="gender" value="other"></label>
+                    </div>
+
+                    <label>Mobile Number:</label>
+                    <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+
+                    <div class="button-group">
+                        <button id="saveBtn" class="save-btn">Save</button>
+                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="card">
+        <h2>What You Can Expect:</h2>
+        <ul>
+            <li>Interactive Tests: Explore our Logical, Creative, or Analytical sections to find out where your skills truly shine.</li>
+            <li>Personalized Insights: Get tailored career recommendations based on your answers.</li>
+            <li>Empower Your Future: Discover opportunities that align with your passions and strengths.</li>
+        </ul>
+        <p>Let’s embark on this journey together and unlock your potential!</p>
+        
+        <!-- Get Started Button that shows quiz options -->
+        <button id="get-started-btn">Get Started</button>
+    </div>
+
+    <!-- Quiz Selection Modal -->
+    <div id="quiz-options" class="quiz-options">
+        <h2>Choose Your Quiz Type</h2>
+        <button onclick="window.location.href='logical.html';">Logical</button>
+        <button onclick="window.location.href='analytical.html';">Analytical</button>
+        <button onclick="window.location.href='creative.html';">Creative</button>
+        <button onclick="closeQuizOptions()">Cancel</button>
+    </div>
+
+    <!-- Overlay to disable navbar -->
+    <div id="overlay" class="overlay"></div>
+
+    <footer>
+        <p style="color: white;">&copy; 2024 Career Craft. Empowering Careers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Show the quiz options and overlay when the "Get Started" button is clicked
+        document.getElementById('get-started-btn').onclick = function() {
+            document.getElementById('quiz-options').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('navbar').classList.add('navbar-disabled'); // Disable navbar
+        }
+
+        // Close the quiz options and overlay
+        function closeQuizOptions() {
+            document.getElementById('quiz-options').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('navbar').classList.remove('navbar-disabled'); // Enable navbar
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
