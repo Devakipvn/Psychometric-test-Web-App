@@ -38,16 +38,16 @@ A simple, responsive web application that allows users to take a psychometric te
 5. The user can restart the test anytime.
 
 # 📂 Folder Structure 
-'''
-/psychometric-test-app
-│
+
+```
+psychometric-test-app/
 ├── index.html
 ├── style.css
 ├── script.js
-├── /assets
+├── assets/
 │   └── (optional images/icons)
 └── README.md
-'''
+```
 
 # 💡 Customization
 
