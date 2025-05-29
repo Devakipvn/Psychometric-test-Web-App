@@ -3,28 +3,45 @@ A simple, responsive web application that allows users to take a psychometric te
 
 # 📌 Features
 ✅ Multiple-choice psychometric questions
+
 📊 Real-time score calculation
+
 🎯 Immediate feedback based on score
+
 🧭 Resource suggestions for users with average or above-average scores
+
 📱 Fully responsive design using Bootstrap
+
 ⚡ Lightweight and fast – runs in the browser without server dependencies
 
 # 🛠️ Tech Stack
+
 - HTML5 – structure of the application
+  
 - CSS3 – styling and layout
+- 
 - JavaScript – logic for test flow and score analysis
+- 
 - Bootstrap – responsive UI components
 
 # 🚀 How It Works
+
 1. The user lands on the home page and starts the test.
+   
 2. A series of multiple-choice questions are presented one after another.
+   
 3. On submission, the app calculates the total score based on selected options.
+   
 4. Based on the score:
+   
     - Below Average: A motivational message is shown.
+      
     - Average/Above Average: A message is shown along with relevant learning resources and roadmaps.
+      
 5. The user can restart the test anytime.
 
 # 📂 Folder Structure
+
 /psychometric-test-app
 │
 ├── index.html
@@ -35,6 +52,7 @@ A simple, responsive web application that allows users to take a psychometric te
 └── README.md
 
 # 💡 Customization
+
 To add or modify questions, edit the script.js file where the questions array is defined.
 
 Styling can be customized in style.css.
@@ -52,7 +70,9 @@ Add your own links and resources in the "Suggestions" section of the result page
 
 # 🧑‍💻 Author
 Devaki PVN
+
 📧 Email: devakipvn@gmail.com
+
 🔗 LinkedIn :https://www.linkedin.com/in/pvndevaki/
 
 # MIT License
