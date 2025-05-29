@@ -16,13 +16,10 @@ A simple, responsive web application that allows users to take a psychometric te
 
 # 🛠️ Tech Stack
 
-- HTML5 – structure of the application
-  
-- CSS3 – styling and layout
-- 
-- JavaScript – logic for test flow and score analysis
-- 
-- Bootstrap – responsive UI components
+-**HTML5** – structure of the application  
+- **CSS3** – styling and layout  
+- **JavaScript** – logic for test flow and score analysis  
+- **Bootstrap** – responsive UI components
 
 # 🚀 How It Works
 
@@ -41,7 +38,6 @@ A simple, responsive web application that allows users to take a psychometric te
 5. The user can restart the test anytime.
 
 # 📂 Folder Structure
-
 /psychometric-test-app
 │
 ├── index.html
@@ -50,6 +46,7 @@ A simple, responsive web application that allows users to take a psychometric te
 ├── /assets
 │   └── (optional images/icons)
 └── README.md
+
 
 # 💡 Customization
 
