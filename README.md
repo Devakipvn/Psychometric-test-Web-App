@@ -37,7 +37,7 @@ A simple, responsive web application that allows users to take a psychometric te
       
 5. The user can restart the test anytime.
 
-📂 Folder Structure
+# 📂 Folder Structure 
 '''
 /psychometric-test-app
 │
@@ -60,10 +60,15 @@ Add your own links and resources in the "Suggestions" section of the result page
 # 📸 Screenshots
 
 ![Screenshot (1)](https://github.com/user-attachments/assets/c969a832-537d-4ced-a049-7e5b07f74a3b)
+
 ![Screenshot (2)](https://github.com/user-attachments/assets/28dd24ac-cac5-4a54-b6d5-044ff35faf78)
+
 ![Screenshot (3)](https://github.com/user-attachments/assets/7f519f67-a96e-426a-9258-4783dfbc17ee)
+
 ![Screenshot (4)](https://github.com/user-attachments/assets/35b148c5-8c1c-4287-b0e6-c6dbe97788a4)
+
 ![Screenshot (5)](https://github.com/user-attachments/assets/2e41a9dd-1885-4631-9c87-47e7e4c83ee9)
+
 ![Screenshot (6)](https://github.com/user-attachments/assets/307439c0-faa0-4ce3-ae6f-8c9ce580a46a)
 
 # 🧑‍💻 Author
