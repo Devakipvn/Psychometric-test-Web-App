@@ -1,7 +1,7 @@
-##🧠 Psychometric Test Web Appplication
+## 🧠 Psychometric Test Web Appplication
 A simple, responsive web application that allows users to take a psychometric test and receive an immediate score with suggestions. This app is built entirely with HTML, CSS, JavaScript, and Bootstrap, without the use of a backend or database.
 
-#📌 Features
+# 📌 Features
 ✅ Multiple-choice psychometric questions
 📊 Real-time score calculation
 🎯 Immediate feedback based on score
@@ -9,13 +9,13 @@ A simple, responsive web application that allows users to take a psychometric te
 📱 Fully responsive design using Bootstrap
 ⚡ Lightweight and fast – runs in the browser without server dependencies
 
-#🛠️ Tech Stack
+# 🛠️ Tech Stack
 - HTML5 – structure of the application
 - CSS3 – styling and layout
 - JavaScript – logic for test flow and score analysis
 - Bootstrap – responsive UI components
 
-#🚀 How It Works
+# 🚀 How It Works
 1. The user lands on the home page and starts the test.
 2. A series of multiple-choice questions are presented one after another.
 3. On submission, the app calculates the total score based on selected options.
@@ -24,7 +24,7 @@ A simple, responsive web application that allows users to take a psychometric te
     - Average/Above Average: A message is shown along with relevant learning resources and roadmaps.
 5. The user can restart the test anytime.
 
-#📂 Folder Structure
+# 📂 Folder Structure
 /psychometric-test-app
 │
 ├── index.html
@@ -34,14 +34,14 @@ A simple, responsive web application that allows users to take a psychometric te
 │   └── (optional images/icons)
 └── README.md
 
-#💡 Customization
+# 💡 Customization
 To add or modify questions, edit the script.js file where the questions array is defined.
 
 Styling can be customized in style.css.
 
 Add your own links and resources in the "Suggestions" section of the result page.
 
-#📸 Screenshots
+# 📸 Screenshots
 
 ![Screenshot (1)](https://github.com/user-attachments/assets/c969a832-537d-4ced-a049-7e5b07f74a3b)
 ![Screenshot (2)](https://github.com/user-attachments/assets/28dd24ac-cac5-4a54-b6d5-044ff35faf78)
@@ -50,12 +50,12 @@ Add your own links and resources in the "Suggestions" section of the result page
 ![Screenshot (5)](https://github.com/user-attachments/assets/2e41a9dd-1885-4631-9c87-47e7e4c83ee9)
 ![Screenshot (6)](https://github.com/user-attachments/assets/307439c0-faa0-4ce3-ae6f-8c9ce580a46a)
 
-#🧑‍💻 Author
+# 🧑‍💻 Author
 Devaki PVN
 📧 Email: devakipvn@gmail.com
 🔗 LinkedIn :https://www.linkedin.com/in/pvndevaki/
 
-#MIT License
+# MIT License
 
 Copyright (c) 2025 Devaki PVN
 
