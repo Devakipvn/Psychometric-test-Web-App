@@ -1,41 +1,66 @@
-## 🧠 Psychometric Test Web Appplication
-A simple, responsive web application that allows users to take a psychometric test and receive an immediate score with suggestions. This app is built entirely with HTML, CSS, JavaScript, and Bootstrap, without the use of a backend or database.
+# 🚀 Psychometric Test Web App
 
-# 📌 Features
-✅ Multiple-choice psychometric questions
+[![Website](https://img.shields.io/badge/Live-Demo-brightgreen)](https://my-portfolio-two-omega-80.vercel.app/)  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)  ![Made with HTML, CSS & JS](https://img.shields.io/badge/Tech-HTML%20|%20CSS%20|%20JS-orange)
 
-📊 Real-time score calculation
+A lightweight, responsive psychometric test web application built with **HTML, CSS, JavaScript** and **Bootstrap**. Users can take a short test, get an immediate score, and receive resource suggestions when they score average or above — all in the browser (no backend required).
 
-🎯 Immediate feedback based on score
+---
 
-🧭 Resource suggestions for users with average or above-average scores
+## ✅ TL;DR
+- Browser-only psychometric test (no server or DB)  
+- Instant scoring + tailored suggestions  
+- Mobile-friendly UI using Bootstrap  
+- Easy to customize questions and resources
 
-📱 Fully responsive design using Bootstrap
+---
 
-⚡ Lightweight and fast – runs in the browser without server dependencies
+## 📌 Features
+- ✅ Multiple-choice psychometric questions  
+- 📊 Real-time score calculation and immediate feedback  
+- 🎯 Tailored suggestions and learning roadmaps for average/above-average scores  
+- 🔁 Restart the test anytime  
+- 📱 Fully responsive with Bootstrap  
+- ⚡ No dependencies — loads and runs in any modern browser
 
-# 🛠️ Tech Stack
+---
 
--**HTML5** – structure of the application  
-- **CSS3** – styling and layout  
-- **JavaScript** – logic for test flow and score analysis  
-- **Bootstrap** – responsive UI components
+## 🛠️ Tech Stack
+<p>
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
+  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+  <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" />
+</p>
 
-# 🚀 How It Works
+---
 
-1. The user lands on the home page and starts the test.
-   
-2. A series of multiple-choice questions are presented one after another.
-   
-3. On submission, the app calculates the total score based on selected options.
-   
-4. Based on the score:
-   
-    - Below Average: A motivational message is shown.
-      
-    - Average/Above Average: A message is shown along with relevant learning resources and roadmaps.
-      
-5. The user can restart the test anytime.
+## 🚀 Quick Start
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/<your-username>/psychometric-test-app.git
+cd psychometric-test-app
+```
+
+2. Open locally
+Open **index.html** in a browser (double-click or right-click → Open with).
+
+3. (Optional) Serve with a local static server
+```bash
+# using Python 3
+python -m http.server 5500
+# then open http://localhost:5500
+```
+
+## 🧭 **How It Works (User Flow)**
+
+- User opens the homepage and clicks Start Test.
+- A sequence of multiple-choice questions is shown.
+- On submit, the app calculates the total score from selected options.
+- The app displays feedback:
+     - Below Average — motivational message + tips.
+     - Average / Above Average — resources & roadmaps tailored to the score.   
+- User can restart the test any time.
 
 # 📂 Folder Structure 
 
@@ -49,27 +74,29 @@ psychometric-test-app/
 └── README.md
 ```
 
-# 💡 Customization
+## ⚙️ Customize Questions & Suggestions
 
-To add or modify questions, edit the script.js file where the questions array is defined.
-
-Styling can be customized in style.css.
-
-Add your own links and resources in the "Suggestions" section of the result page.
+- Edit **script.js** → the questions array to add/edit questions/options.
+- Edit the suggestions object (or function) to change resources and roadmaps for each score bracket.
+- Tweak styles in **style.css** for colors, spacing, and visual theme.
 
 # 📸 Screenshots
-
+**Home**
 ![Screenshot (1)](https://github.com/user-attachments/assets/c969a832-537d-4ced-a049-7e5b07f74a3b)
-
+**Registration**
 ![Screenshot (2)](https://github.com/user-attachments/assets/28dd24ac-cac5-4a54-b6d5-044ff35faf78)
-
+**MockUP 1**
 ![Screenshot (3)](https://github.com/user-attachments/assets/7f519f67-a96e-426a-9258-4783dfbc17ee)
-
+**MockUp 2**
 ![Screenshot (4)](https://github.com/user-attachments/assets/35b148c5-8c1c-4287-b0e6-c6dbe97788a4)
-
+**Quiz Section**
 ![Screenshot (5)](https://github.com/user-attachments/assets/2e41a9dd-1885-4631-9c87-47e7e4c83ee9)
-
+**Results, Suggestions & Resources**
 ![Screenshot (6)](https://github.com/user-attachments/assets/307439c0-faa0-4ce3-ae6f-8c9ce580a46a)
+
+
+# 🧪 Demo
+
 
 # 🧑‍💻 Author
 Devaki PVN
