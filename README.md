@@ -52,6 +52,8 @@ python -m http.server 5500
 # then open http://localhost:5500
 ```
 
+---
+
 ## 🧭 **How It Works (User Flow)**
 
 - User opens the homepage and clicks Start Test.
@@ -61,6 +63,8 @@ python -m http.server 5500
      - Below Average — motivational message + tips.
      - Average / Above Average — resources & roadmaps tailored to the score.   
 - User can restart the test any time.
+
+---
 
 # 📂 Folder Structure 
 
@@ -74,11 +78,15 @@ psychometric-test-app/
 └── README.md
 ```
 
+---
+
 ## ⚙️ Customize Questions & Suggestions
 
 - Edit **script.js** → the questions array to add/edit questions/options.
 - Edit the suggestions object (or function) to change resources and roadmaps for each score bracket.
 - Tweak styles in **style.css** for colors, spacing, and visual theme.
+
+---
 
 # 📸 Screenshots
 **Home**
@@ -95,7 +103,13 @@ psychometric-test-app/
 ![Screenshot (6)](https://github.com/user-attachments/assets/307439c0-faa0-4ce3-ae6f-8c9ce580a46a)
 
 
+---
+
 # 🧪 Demo
+
+   https://devakipvn.github.io/Psychometric-test-Web-App/
+
+---
 
 
 # 🧑‍💻 Author
@@ -105,24 +119,26 @@ Devaki PVN
 
 🔗 LinkedIn :https://www.linkedin.com/in/pvndevaki/
 
-# MIT License
+---
 
-Copyright (c) 2025 Devaki PVN
+## 🤝 Contributing
 
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this software and associated documentation files (the "Software"), to deal  
-in the Software without restriction, including without limitation the rights  
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
-copies of the Software, and to permit persons to whom the Software is  
-furnished to do so, subject to the following conditions:
+Contributions are welcome — open an issue or a PR to suggest improvements (question types, scoring tweaks, UI polish, etc.).
 
-The above copyright notice and this permission notice shall be included in all  
-copies or substantial portions of the Software.
+---
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
-SOFTWARE.
+## 📝 License
+
+This project is released under the MIT License. See LICENSE for details.
+
+
+---
+```
+If you want, I can:
+- produce a **cover/banner SVG** for the top of the README,  
+- generate a **compact demo GIF** from the app flow, or  
+- produce a **cleaner `script.js` template** with commented question array for easier editing.
+
+Which one would you like next?
+::contentReference[oaicite:0]{index=0}
+```
